@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水印相机 - 照片打卡工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>📸 水印相机</h1>
+            <p>为您的照片添加专业的打卡水印</p>
+        </header>
+
+        <div class="main-content">
+            <!-- 左侧：图片上传和预览区域 -->
+            <div class="image-section">
+                <div class="upload-preview-area" id="uploadPreviewArea">
+                    <div class="upload-placeholder" id="uploadPlaceholder">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <h3>选择或拖拽照片</h3>
+                        <p>支持 JPG、PNG 格式</p>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                        <button type="button" id="selectBtn">选择照片</button>
+                    </div>
+                    <div class="image-preview" id="imagePreview" style="display: none;">
+                        <img id="previewImage" alt="预览图片">
+                        <canvas id="canvas" style="display: none;"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：控制面板 -->
+            <div class="control-panel">
+                <div class="form-section">
+                    <h3>📝 水印信息</h3>
+                    
+                    <div class="form-group">
+                        <label for="dateInput">📅 日期</label>
+                        <input type="date" id="dateInput" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeInput">🕐 时间</label>
+                        <input type="time" id="timeInput" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="locationInput">📍 地点</label>
+                        <input type="text" id="locationInput" placeholder="请输入地点信息" required>
+                    </div>
+
+                    <div class="watermark-settings">
+                        <h4>🎨 水印设置</h4>
+                        <div class="settings-row">
+                            <div class="setting-item">
+                                <label for="watermarkPosition">位置</label>
+                                <select id="watermarkPosition">
+                                    <option value="bottom-left">左下角</option>
+                                    <option value="bottom-right">右下角</option>
+                                    <option value="top-left">左上角</option>
+                                    <option value="top-right">右上角</option>
+                                </select>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <label for="watermarkSize">大小</label>
+                                <select id="watermarkSize">
+                                    <option value="small">小</option>
+                                    <option value="medium" selected>中</option>
+                                    <option value="large">大</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="addWatermarkBtn" class="primary-btn" disabled>
+                            <span>✨ 添加水印</span>
+                        </button>
+                        <button id="downloadBtn" class="success-btn" disabled>
+                            <span>💾 下载图片</span>
+                        </button>
+                        <button id="resetBtn" class="secondary-btn">
+                            <span>🔄 重新开始</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
