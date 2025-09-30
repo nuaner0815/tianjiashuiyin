@@ -76,6 +76,41 @@
                                     <option value="large">大</option>
                                 </select>
                             </div>
+                            
+                            <div class="setting-item">
+                                <label for="watermarkBackground">背景</label>
+                                <select id="watermarkBackground">
+                                    <option value="none">无背景</option>
+                                    <option value="gradient" selected>渐变背景</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- 渐变背景颜色设置 -->
+                        <div class="gradient-color-settings" id="gradientColorSettings">
+                            <h5>🎨 渐变颜色设置</h5>
+                            <div class="color-row">
+                                <div class="color-item">
+                                    <label for="gradientStartColor">起始颜色</label>
+                                    <input type="color" id="gradientStartColor" value="#000000">
+                                </div>
+                                <div class="color-item">
+                                    <label for="gradientEndColor">结束颜色</label>
+                                    <input type="color" id="gradientEndColor" value="#000000">
+                                </div>
+                            </div>
+                            <div class="opacity-row">
+                                <div class="opacity-item">
+                                    <label for="gradientStartOpacity">起始透明度</label>
+                                    <input type="range" id="gradientStartOpacity" min="0" max="100" value="60">
+                                    <span id="startOpacityValue">60%</span>
+                                </div>
+                                <div class="opacity-item">
+                                    <label for="gradientEndOpacity">结束透明度</label>
+                                    <input type="range" id="gradientEndOpacity" min="0" max="100" value="30">
+                                    <span id="endOpacityValue">30%</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

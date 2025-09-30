@@ -286,6 +286,90 @@ body {
 }
 
 /* 响应式设计 */
+
+/* 渐变颜色设置样式 */
+.gradient-color-settings {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    display: none; /* 默认隐藏 */
+}
+
+.gradient-color-settings.show {
+    display: block;
+}
+
+.gradient-color-settings h5 {
+    margin-bottom: 12px;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.color-row, .opacity-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.color-item, .opacity-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.color-item label, .opacity-item label {
+    font-size: 0.8rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.color-item input[type="color"] {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.opacity-item input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #ddd;
+    outline: none;
+    cursor: pointer;
+}
+
+.opacity-item input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+}
+
+.opacity-item input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    border: none;
+}
+
+.opacity-item span {
+    font-size: 0.8rem;
+    color: #495057;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* 默认隐藏渐变设置 - 已移动到上方 */
+
 @media (max-width: 768px) {
     .main-content {
         grid-template-columns: 1fr;
